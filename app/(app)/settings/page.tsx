@@ -20,7 +20,7 @@ export default function SettingsPage() {
     setTimeout(() => setStatus('idle'), 2000)
   }
 
-  if (!loaded) return <div className="pt-8 text-center text-gray-500">불러오는 중...</div>
+  if (!loaded) return <div className="pt-8 text-center text-gray-400">불러오는 중...</div>
 
   return (
     <div className="pt-8 space-y-6">
@@ -35,7 +35,7 @@ export default function SettingsPage() {
               defaultValue={settings?.gemini_api_key ?? ''}
               placeholder="AIza..."
               className="w-full px-3 py-2 border border-gray-600 rounded-xl text-sm bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-400">
               aistudio.google.com에서 무료로 발급 가능
             </p>
           </div>

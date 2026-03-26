@@ -17,7 +17,7 @@ export default function QuizSetupPage() {
     const text = materials.map((m: any) => m.extracted_text).filter(Boolean).join('\n\n').slice(0, 3000)
     const result = await generateAndSaveQuiz(params.id, count, difficulty, text)
     if (result.error) { setError(result.error); setLoading(false); return }
-    router.push(`/app/subjects/${params.id}/quiz/session?session=${result.sessionId}`)
+    router.push(`/subjects/${params.id}/quiz/session?session=${result.sessionId}`)
   }
 
   return (

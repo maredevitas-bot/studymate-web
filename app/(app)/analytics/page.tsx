@@ -9,7 +9,7 @@ export default async function AnalyticsPage() {
 
   if (!subjects?.length) {
     return (
-      <div className="pt-8 text-center py-16 text-gray-500">
+      <div className="pt-8 text-center py-16 text-gray-400">
         <p className="text-4xl mb-3">📊</p>
         <p>과목을 추가하고 퀴즈를 풀어보세요</p>
       </div>
@@ -37,7 +37,7 @@ export default async function AnalyticsPage() {
       <h1 className="text-2xl font-bold text-white">분석</h1>
 
       {subjectStats.length === 0 ? (
-        <div className="bg-gray-800 rounded-2xl p-8 shadow-sm text-center text-gray-500">
+        <div className="bg-gray-800 rounded-2xl p-8 shadow-sm text-center text-gray-400">
           <p className="text-3xl mb-2">🎯</p>
           <p className="text-sm">퀴즈를 먼저 풀어보세요</p>
         </div>
@@ -61,7 +61,7 @@ export default async function AnalyticsPage() {
               </div>
             </div>
           ))}
-          <p className="text-xs text-gray-500">* 70점 미만은 약점 과목으로 표시</p>
+          <p className="text-xs text-gray-400">* 70점 미만은 약점 과목으로 표시</p>
         </div>
       )}
 

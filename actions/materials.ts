@@ -45,7 +45,7 @@ export async function analyzeAndSaveMaterial(
       highlights: analysis.highlights,
     }).select().single()
     if (error) return { error: error.message }
-    revalidatePath(`/app/subjects/${subjectId}`)
+    revalidatePath(`/subjects/${subjectId}`)
     return { material }
   } catch (e: any) {
     if (e.message?.includes('429')) return { error: '요청이 너무 많습니다. 잠시 후 다시 시도해주세요.' }
@@ -56,5 +56,5 @@ export async function analyzeAndSaveMaterial(
 export async function deleteMaterial(id: string, subjectId: string) {
   const supabase = await createClient()
   await supabase.from('materials').delete().eq('id', id)
-  revalidatePath(`/app/subjects/${subjectId}`)
+  revalidatePath(`/subjects/${subjectId}`)
 }

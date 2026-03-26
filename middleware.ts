@@ -1,6 +1,8 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+const PROTECTED = ['/subjects', '/planner', '/analytics', '/settings']
+
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
   const supabase = createServerClient(
@@ -20,15 +22,16 @@ export async function middleware(request: NextRequest) {
     }
   )
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user && request.nextUrl.pathname.startsWith('/app')) {
+  const isProtected = PROTECTED.some(p => request.nextUrl.pathname.startsWith(p))
+  if (!user && isProtected) {
     return NextResponse.redirect(new URL('/', request.url))
   }
   if (user && request.nextUrl.pathname === '/') {
-    return NextResponse.redirect(new URL('/app/subjects', request.url))
+    return NextResponse.redirect(new URL('/subjects', request.url))
   }
   return supabaseResponse
 }
 
 export const config = {
-  matcher: ['/', '/app/:path*'],
+  matcher: ['/', '/subjects/:path*', '/planner/:path*', '/analytics/:path*', '/settings/:path*'],
 }

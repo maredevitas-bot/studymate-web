@@ -35,7 +35,7 @@ export async function generatePlan(examDate: Date) {
     const toInsert = entries.map((e: any) => ({ user_id: user.id, subject_name: e.subjectName, topic: e.topic, date: e.date }))
     await supabase.from('plan_entries').delete().eq('user_id', user.id)
     await supabase.from('plan_entries').insert(toInsert)
-    revalidatePath('/app/planner')
+    revalidatePath('/planner')
     return { count: entries.length }
   } catch (e: any) {
     if (e.message?.includes('429')) return { error: '요청이 너무 많습니다. 잠시 후 다시 시도해주세요.' }
@@ -46,5 +46,5 @@ export async function generatePlan(examDate: Date) {
 export async function togglePlanEntry(id: string, completed: boolean) {
   const supabase = await createClient()
   await supabase.from('plan_entries').update({ completed }).eq('id', id)
-  revalidatePath('/app/planner')
+  revalidatePath('/planner')
 }

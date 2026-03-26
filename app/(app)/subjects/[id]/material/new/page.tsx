@@ -29,7 +29,7 @@ export default function NewMaterialPage() {
       )
       if (result?.error) { setError(result.error); setStatus('idle'); return }
       setStatus('done')
-      router.push(`/app/subjects/${params.id}`)
+      router.push(`/subjects/${params.id}`)
     } catch (e: any) {
       setError(e.message)
       setStatus('idle')

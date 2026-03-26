@@ -26,11 +26,11 @@ function QuizSessionContent() {
     if (current < questions.length - 1) setCurrent(c => c + 1)
     else {
       sessionStorage.setItem(`quiz_answers_${sessionId}`, JSON.stringify(answers))
-      router.push(`/app/subjects/${params.id}/quiz/result?session=${sessionId}`)
+      router.push(`/subjects/${params.id}/quiz/result?session=${sessionId}`)
     }
   }
 
-  if (!questions.length) return <div className="pt-8 text-center text-gray-500">불러오는 중...</div>
+  if (!questions.length) return <div className="pt-8 text-center text-gray-400">불러오는 중...</div>
   const q = questions[current]
 
   return (
@@ -61,7 +61,7 @@ function QuizSessionContent() {
 
 export default function QuizSessionPage() {
   return (
-    <Suspense fallback={<div className="pt-8 text-center text-gray-500">불러오는 중...</div>}>
+    <Suspense fallback={<div className="pt-8 text-center text-gray-400">불러오는 중...</div>}>
       <QuizSessionContent />
     </Suspense>
   )

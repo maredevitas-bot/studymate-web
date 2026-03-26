@@ -22,11 +22,11 @@ export async function createSubject(formData: FormData) {
     color_hex: formData.get('color_hex') as string || '#4A90D9',
   })
   if (error) throw new Error(error.message)
-  revalidatePath('/app/subjects')
+  revalidatePath('/subjects')
 }
 
 export async function deleteSubject(id: string) {
   const supabase = await createClient()
   await supabase.from('subjects').delete().eq('id', id)
-  revalidatePath('/app/subjects')
+  revalidatePath('/subjects')
 }

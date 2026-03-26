@@ -6,7 +6,7 @@ interface Props {
 
 export default function SubjectCard({ subject }: Props) {
   return (
-    <Link href={`/app/subjects/${subject.id}`}>
+    <Link href={`/subjects/${subject.id}`}>
       <div className="bg-gray-800 rounded-2xl p-4 flex items-center gap-4 shadow-sm active:scale-95 transition-transform">
         <div className="w-12 h-12 rounded-xl flex-shrink-0"
           style={{ backgroundColor: subject.color_hex + '33' }}>

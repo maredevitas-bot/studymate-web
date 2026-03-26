@@ -46,7 +46,7 @@ export default function PlannerPage() {
 
       {Object.keys(grouped).sort().map(date => (
         <div key={date} className="space-y-2">
-          <p className="text-sm font-semibold text-gray-500">
+          <p className="text-sm font-semibold text-gray-400">
             {new Date(date + 'T00:00:00').toLocaleDateString('ko-KR', { month:'long', day:'numeric', weekday:'short' })}
           </p>
           {grouped[date].map((e: any) => (
@@ -64,7 +64,7 @@ export default function PlannerPage() {
       ))}
 
       {entries.length === 0 && !loading && (
-        <div className="text-center py-16 text-gray-500">
+        <div className="text-center py-16 text-gray-400">
           <p className="text-4xl mb-3">📅</p>
           <p>시험일을 입력하고 플래너를 생성해보세요</p>
         </div>

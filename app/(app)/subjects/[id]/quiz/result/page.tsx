@@ -27,7 +27,7 @@ function QuizResultContent() {
   async function handleSave() {
     await saveQuizResult(sessionId, answers, score)
     setSaved(true)
-    router.push(`/app/subjects/${params.id}`)
+    router.push(`/subjects/${params.id}`)
   }
 
   return (
@@ -37,14 +37,14 @@ function QuizResultContent() {
         <div key={i} className="bg-gray-800 rounded-2xl p-4 shadow-sm space-y-3">
           <p className="font-medium text-white">{q.body}</p>
           <div className="space-y-1">
-            <p className="text-xs text-gray-500">내 답변</p>
+            <p className="text-xs text-gray-400">내 답변</p>
             <p className="text-sm bg-gray-700 text-gray-200 p-3 rounded-xl">{answers[i] || '(미입력)'}</p>
           </div>
           <div className="space-y-1">
             <p className="text-xs text-blue-400">모범 답안</p>
             <p className="text-sm bg-blue-900/30 text-blue-200 p-3 rounded-xl">{q.modelAnswer}</p>
           </div>
-          <p className="text-xs text-gray-500">{q.scoringCriteria}</p>
+          <p className="text-xs text-gray-400">{q.scoringCriteria}</p>
         </div>
       ))}
       {!saved && (
@@ -71,7 +71,7 @@ function QuizResultContent() {
 
 export default function QuizResultPage() {
   return (
-    <Suspense fallback={<div className="pt-8 text-center text-gray-500">불러오는 중...</div>}>
+    <Suspense fallback={<div className="pt-8 text-center text-gray-400">불러오는 중...</div>}>
       <QuizResultContent />
     </Suspense>
   )

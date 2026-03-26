@@ -15,7 +15,7 @@ export default async function SubjectsPage() {
       </div>
 
       {subjects.length === 0 && (
-        <div className="text-center py-16 text-gray-500">
+        <div className="text-center py-16 text-gray-400">
           <p className="text-4xl mb-3">📚</p>
           <p className="font-medium">아직 과목이 없어요</p>
           <p className="text-sm mt-1">아래에서 과목을 추가해보세요</p>

@@ -38,6 +38,6 @@ export async function saveSettings(formData: FormData) {
     exam_date: formData.get('exam_date') as string || null,
   })
   if (error) return { error: error.message }
-  revalidatePath('/app/settings')
+  revalidatePath('/settings')
   return { success: true }
 }

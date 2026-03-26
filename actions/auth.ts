@@ -9,7 +9,7 @@ export async function signUp(formData: FormData) {
     password: formData.get('password') as string,
   })
   if (error) return { error: error.message }
-  redirect('/app/subjects')
+  redirect('/subjects')
 }
 
 export async function signIn(formData: FormData) {
@@ -19,7 +19,7 @@ export async function signIn(formData: FormData) {
     password: formData.get('password') as string,
   })
   if (error) return { error: error.message }
-  redirect('/app/subjects')
+  redirect('/subjects')
 }
 
 export async function signOut() {

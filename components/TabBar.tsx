@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const tabs = [
-  { href: '/app/subjects', label: '과목', icon: '📚' },
-  { href: '/app/planner', label: '플래너', icon: '📅' },
-  { href: '/app/analytics', label: '분석', icon: '📊' },
-  { href: '/app/settings', label: '설정', icon: '⚙️' },
+  { href: '/subjects', label: '과목', icon: '📚' },
+  { href: '/planner', label: '플래너', icon: '📅' },
+  { href: '/analytics', label: '분석', icon: '📊' },
+  { href: '/settings', label: '설정', icon: '⚙️' },
 ]
 
 export default function TabBar() {
