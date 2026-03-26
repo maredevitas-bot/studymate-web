@@ -32,27 +32,27 @@ function QuizResultContent() {
 
   return (
     <div className="pt-8 space-y-6">
-      <h1 className="text-xl font-bold">퀴즈 결과</h1>
+      <h1 className="text-xl font-bold text-white">퀴즈 결과</h1>
       {questions.map((q, i) => (
-        <div key={i} className="bg-white rounded-2xl p-4 shadow-sm space-y-3">
-          <p className="font-medium">{q.body}</p>
+        <div key={i} className="bg-gray-800 rounded-2xl p-4 shadow-sm space-y-3">
+          <p className="font-medium text-white">{q.body}</p>
           <div className="space-y-1">
-            <p className="text-xs text-gray-400">내 답변</p>
-            <p className="text-sm bg-gray-50 p-3 rounded-xl">{answers[i] || '(미입력)'}</p>
+            <p className="text-xs text-gray-500">내 답변</p>
+            <p className="text-sm bg-gray-700 text-gray-200 p-3 rounded-xl">{answers[i] || '(미입력)'}</p>
           </div>
           <div className="space-y-1">
             <p className="text-xs text-blue-400">모범 답안</p>
-            <p className="text-sm bg-blue-50 p-3 rounded-xl">{q.modelAnswer}</p>
+            <p className="text-sm bg-blue-900/30 text-blue-200 p-3 rounded-xl">{q.modelAnswer}</p>
           </div>
-          <p className="text-xs text-gray-400">{q.scoringCriteria}</p>
+          <p className="text-xs text-gray-500">{q.scoringCriteria}</p>
         </div>
       ))}
       {!saved && (
-        <div className="bg-white rounded-2xl p-6 shadow-sm space-y-4">
-          <p className="font-medium">자기 채점</p>
+        <div className="bg-gray-800 rounded-2xl p-6 shadow-sm space-y-4">
+          <p className="font-medium text-white">자기 채점</p>
           <div className="space-y-2">
             <div className="flex justify-between">
-              <span className="text-sm text-gray-500">점수</span>
+              <span className="text-sm text-gray-400">점수</span>
               <span className="font-bold text-blue-500">{score}점</span>
             </div>
             <input type="range" min={0} max={100} step={5} value={score}
@@ -71,7 +71,7 @@ function QuizResultContent() {
 
 export default function QuizResultPage() {
   return (
-    <Suspense fallback={<div className="pt-8 text-center text-gray-400">불러오는 중...</div>}>
+    <Suspense fallback={<div className="pt-8 text-center text-gray-500">불러오는 중...</div>}>
       <QuizResultContent />
     </Suspense>
   )

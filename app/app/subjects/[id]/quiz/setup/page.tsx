@@ -22,25 +22,25 @@ export default function QuizSetupPage() {
 
   return (
     <div className="pt-8 space-y-6">
-      <h1 className="text-xl font-bold">퀴즈 설정</h1>
-      <div className="bg-white rounded-2xl p-6 shadow-sm space-y-6">
+      <h1 className="text-xl font-bold text-white">퀴즈 설정</h1>
+      <div className="bg-gray-800 rounded-2xl p-6 shadow-sm space-y-6">
         <div>
-          <p className="font-medium mb-3">문제 수</p>
+          <p className="font-medium mb-3 text-white">문제 수</p>
           <div className="flex items-center gap-4">
             <button onClick={() => setCount(c => Math.max(1, c-1))}
-              className="w-10 h-10 rounded-full bg-gray-100 font-bold text-xl">−</button>
-            <span className="text-2xl font-bold w-8 text-center">{count}</span>
+              className="w-10 h-10 rounded-full bg-gray-700 text-white font-bold text-xl">−</button>
+            <span className="text-2xl font-bold w-8 text-center text-white">{count}</span>
             <button onClick={() => setCount(c => Math.min(5, c+1))}
-              className="w-10 h-10 rounded-full bg-gray-100 font-bold text-xl">+</button>
+              className="w-10 h-10 rounded-full bg-gray-700 text-white font-bold text-xl">+</button>
           </div>
         </div>
         <div>
-          <p className="font-medium mb-3">난이도</p>
+          <p className="font-medium mb-3 text-white">난이도</p>
           <div className="flex gap-2">
             {['쉬움','보통','어려움'].map(d => (
               <button key={d} onClick={() => setDifficulty(d)}
                 className={`flex-1 py-2 rounded-xl text-sm font-medium transition-colors
-                  ${difficulty === d ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                  ${difficulty === d ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-200'}`}>
                 {d}
               </button>
             ))}

@@ -20,39 +20,39 @@ export default function SettingsPage() {
     setTimeout(() => setStatus('idle'), 2000)
   }
 
-  if (!loaded) return <div className="pt-8 text-center text-gray-400">불러오는 중...</div>
+  if (!loaded) return <div className="pt-8 text-center text-gray-500">불러오는 중...</div>
 
   return (
     <div className="pt-8 space-y-6">
-      <h1 className="text-2xl font-bold">설정</h1>
+      <h1 className="text-2xl font-bold text-white">설정</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="bg-white rounded-2xl p-6 shadow-sm space-y-4">
-          <h2 className="font-semibold">AI 설정</h2>
+        <div className="bg-gray-800 rounded-2xl p-6 shadow-sm space-y-4">
+          <h2 className="font-semibold text-white">AI 설정</h2>
           <div className="space-y-1">
-            <label className="text-sm text-gray-500">Gemini API 키</label>
+            <label className="text-sm text-gray-400">Gemini API 키</label>
             <input name="gemini_api_key" type="password"
               defaultValue={settings?.gemini_api_key ?? ''}
               placeholder="AIza..."
-              className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <p className="text-xs text-gray-400">
+              className="w-full px-3 py-2 border border-gray-600 rounded-xl text-sm bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <p className="text-xs text-gray-500">
               aistudio.google.com에서 무료로 발급 가능
             </p>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow-sm space-y-4">
-          <h2 className="font-semibold">학교 정보</h2>
+        <div className="bg-gray-800 rounded-2xl p-6 shadow-sm space-y-4">
+          <h2 className="font-semibold text-white">학교 정보</h2>
           <input name="school_name" defaultValue={settings?.school_name ?? ''}
             placeholder="학교 이름"
-            className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            className="w-full px-3 py-2 border border-gray-600 rounded-xl text-sm bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <input name="grade" defaultValue={settings?.grade ?? ''}
             placeholder="학년 (예: 2학년)"
-            className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            className="w-full px-3 py-2 border border-gray-600 rounded-xl text-sm bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <div className="space-y-1">
-            <label className="text-sm text-gray-500">시험일</label>
+            <label className="text-sm text-gray-400">시험일</label>
             <input name="exam_date" type="date" defaultValue={settings?.exam_date ?? ''}
-              className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              className="w-full px-3 py-2 border border-gray-600 rounded-xl text-sm bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
         </div>
 
@@ -67,7 +67,7 @@ export default function SettingsPage() {
       </form>
 
       <button onClick={() => signOut()}
-        className="w-full py-3 rounded-xl font-medium text-red-500 bg-white shadow-sm">
+        className="w-full py-3 rounded-xl font-medium text-red-400 bg-gray-800 shadow-sm">
         로그아웃
       </button>
     </div>
